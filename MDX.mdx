@@ -1,0 +1,112 @@
+﻿--1. Với mỗi tiểu bang, tìm 3 thành phố có độ trễ trung bình ở nơi khởi hành lớn nhất
+SELECT NON EMPTY [Measures].[Avg Dep Delay] on COLUMNS,
+	   NON EMPTY GENERATE(
+						  [Dim Dep Airport].[Dep Airport State].CHILDREN,
+						  TOPCOUNT(
+								   [Dim Dep Airport].[Dep Airport State].CURRENTMEMBER *
+								   [Dim Dep Airport].[Dep Airport City].CHILDREN,
+								   3, 
+								   [Measures].[Avg Dep Delay]
+								  )
+						 ) on ROWS
+FROM [US FLights 2023];
+
+--2. Tìm 5 thành phố thực hiện nhiều chuyến bay nhất
+SELECT TOPCOUNT(
+				[Dim Dep Airport].[Dep Airport City].CHILDREN,
+				5, 
+				[Measures].[Count Fact Flight]
+			   ) ON ROWS,
+	   [Measures].[Count Fact Flight] ON COLUMNS
+FROM [US FLights 2023];
+
+--3. Tìm những tháng trong năm có độ trễ trung bình lớn hơn 15 phút
+SELECT NON EMPTY [Dim Time].[Month].CHILDREN
+				 HAVING [Measures].[Avg Dep Delay]>15 ON ROWS,
+	   NON EMPTY [Measures].[Avg Dep Delay] ON COLUMNS
+FROM [US FLights 2023];
+
+SELECT NON EMPTY FILTER([Dim Time].[Month].CHILDREN, [Measures].[Avg Dep Delay]>15) ON ROWS,
+	   NON EMPTY([Measures].[Avg Dep Delay]) ON COLUMNS
+FROM [US FLights 2023];
+
+--4. Cho biết số chuyến bay đã thực hiện bởi máy bay của từng hãng sản xuất trong 3 tháng đầu năm 2023
+SELECT
+      [Measures].[Count Fact Flight] ON COLUMNS,
+    NON EMPTY [Dim Aircraft].[Manufacturer].CHILDREN ON ROWS
+FROM
+    [US FLights 2023]
+WHERE
+    (
+		[Dim Time].[Year].[2023],
+        {
+			[Dim Time].[Month].&[1],
+			[Dim Time].[Month].&[2],
+			[Dim Time].[Month].&[3]
+		}
+	);
+
+--5. Số lượng chuyến bay mỗi ngày trong tuần
+SELECT
+  NON EMPTY
+  [Dim Time].[Day Of Week].children ON COLUMNS,
+  NON EMPTY
+  [Measures].[Count Fact Flight] ON ROWS
+FROM [US FLights 2023];
+
+--6.Tìm độ trễ trung bình của các máy bay thuộc hãng BOEING và độ trễ trung bình của các máy bay thuộc mẫu BOEING 717, BOEING 737
+SELECT [Measures].[Avg Dep Delay] ON COLUMNS,  
+   NON EMPTY (  
+   DRILLDOWNLEVEL(  
+       {[Dim Aircraft].[Hierarchy].[Manufacturer].[BOEING],  
+           DESCENDANTS(  
+             { [Dim Aircraft].[Hierarchy].[Model].[717],    
+               [Dim Aircraft].[Hierarchy].[Model].[737]},   
+               [Dim Aircraft].[Hierarchy].[Tail Number]) } ,  
+[Dim Aircraft].[Hierarchy].[Tail Number] ) )  ON ROWS  
+FROM [US FLights 2023];
+
+--7. số lượng chuyến bay hàng tháng của hãng hàng không Alaska Airlines Inc.
+SELECT
+  NON EMPTY
+  [Dim Time].[Month].children ON COLUMNS,
+  NON EMPTY
+  [Measures].[Count Fact Flight] ON ROWS
+FROM [US FLights 2023]
+WHERE ([Dim Airline].[Airline Name].&[Alaska Airlines Inc.]);
+
+--8. Cho biết số chuyến bay mỗi tháng của từng hãng hàng không 
+SELECT
+  NON EMPTY [Dim Time].[Month].Children ON COLUMNS,
+  NON EMPTY [Dim Airline].[Airline Name].Children ON ROWS
+FROM [US FLights 2023]
+WHERE [Measures].[Count Fact Flight];
+
+--9. Lấy 5 hãng hàng không có số lượng chuyến bay nhiều nhất năm 2023
+SELECT
+  NON EMPTY
+  [Dim Time].[Year].Children ON COLUMNS,
+  NON EMPTY
+  TOPCOUNT(
+    [Dim Airline].[Airline Name].Children,
+    5,
+    [Measures].[Count Fact Flight]
+  ) ON ROWS
+FROM [US FLights 2023]
+WHERE [Measures].[Count Fact Flight];
+
+--10. Tìm 5 sân bay đến có tổng thời gian bay lớn nhất nhưng chỉ những sân bay có số lượng chuyến bay lớn hơn 1000:
+SELECT
+  NON EMPTY
+  [Dim Time].[Year].Children ON COLUMNS,
+  NON EMPTY
+  TOPCOUNT(
+    FILTER(
+      [Dim Arr Airport].[Arr Airport Name].Children,
+      [Measures].[Count Fact Flight] > 1000
+    ),
+    5,
+    [Measures].[Sum Flight Duration]
+  ) ON ROWS
+FROM [US FLights 2023]
+WHERE [Measures].[Sum Flight Duration];
