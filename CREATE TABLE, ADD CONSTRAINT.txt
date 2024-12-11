@@ -1,0 +1,185 @@
+DELETE FROM DimTime;
+DELETE FROM DimDepAirport;
+DELETE FROM DimArrAirport;
+DELETE FROM DimAircraft;
+DELETE FROM DimDepWeather;
+DELETE FROM DimArrWeather;
+DELETE FROM FactFlight;
+DELETE FROM DimDepDelayType;
+DELETE FROM DimArrDelayType;
+DELETE FROM DimAirline;
+DELETE FROM DimDepDelayTag;
+DELETE FROM DimDistanceType;
+
+DBCC CHECKIDENT ('DimAircraft', RESEED, 0);
+DBCC CHECKIDENT ('DimDepDelayType', RESEED, 0);
+DBCC CHECKIDENT ('DimArrDelayType', RESEED, 0);
+DBCC CHECKIDENT ('DimAirline', RESEED, 0);
+DBCC CHECKIDENT ('DimDistanceType', RESEED, 0);
+
+
+CREATE TABLE [DimTime] (
+    [TimeID] nvarchar(511) PRIMARY KEY,
+    [DepTimeLabel] nvarchar(255),
+    [DayOfWeek] int,
+    [FlightDate] date,
+    [Day] int,
+    [Month] int,
+    [Year] int
+)
+
+CREATE TABLE [DimDepAirport] (
+    [DepAirportID] nvarchar(255) PRIMARY KEY,
+    [DepAirportName] nvarchar(255),
+    [DepAirportCity] nvarchar(255),
+    [DepAirportState] nvarchar(255),
+    [DepAirportCountry] nvarchar(255),
+    [DepAirportLatitude] float,
+    [DepAirportLongitude] float
+)
+
+CREATE TABLE [DimArrAirport] (
+    [ArrAirportID] nvarchar(255) PRIMARY KEY,
+    [ArrAirportName] nvarchar(255),
+    [ArrAirportCity] nvarchar(255),
+    [ArrAirportState] nvarchar(255),
+    [ArrAirportCountry] nvarchar(255),
+    [ArrAirportLatitude] float,
+    [ArrAirportLongitude] float
+)
+
+CREATE TABLE [DimAircraft] (
+    [AircraftID] int IDENTITY(1,1) PRIMARY KEY, 
+    [TailNumber] nvarchar(255),
+    [Manufacturer] nvarchar(255),
+    [Model] nvarchar(255),
+    [AicraftAge] int
+)
+
+CREATE TABLE [DimDepWeather] (
+    [DepWeatherID] nvarchar(511),
+    [DepAirportID] nvarchar(255),
+    [Date] date,
+    [DepAvgTemperature] float,
+    [DepMinTemperature] float,
+    [DepMaxTemperature] float,
+    [DepTotalPrecipitation] float,
+    [DepSnowDepth] float,
+    [DepWindDirection] float,
+    [DepAvgWindSpeed] float,
+    [DepSeaLevelAirPressure] float,
+    PRIMARY KEY (DepWeatherID)
+)
+
+CREATE TABLE [DimArrWeather] (
+    [ArrWeatherID] nvarchar(511),
+    [ArrAirportID] nvarchar(255),
+    [Date] date,
+    [ArrAvgTemperature] float,
+    [ArrMinTemperature] float,
+    [ArrMaxTemperature] float,
+    [ArrTotalPrecipitation] float,
+    [ArrSnowDepth] float,
+    [ArrWindDirection] float,
+    [ArrAvgWindSpeed] float,
+    [ArrSeaLevelAirPressure] float,
+    PRIMARY KEY (ArrWeatherID)
+)
+
+CREATE TABLE [FactFlight] (
+    [AircraftID] int,
+    [TimeID] nvarchar(511),
+    [DepWeatherID] nvarchar(511),
+    [ArrWeatherID] nvarchar(511),
+
+    [AirlineID] int,
+
+    [DepAirportID] nvarchar(255),
+    [DepDelay] float,
+    [DepDelayTagID] int,
+    [DepDelayTypeID] int,
+
+    [ArrAirportID] nvarchar(255),
+    [ArrDelay] float,
+    [ArrDelayTypeID] int,
+
+    [FlightDuration] float,
+    [DistanceTypeID] int,
+    [DelayCarrier] float,
+    [DelayWeather] float,
+    [DelayNAS] float,
+    [DelaySecurity] float,
+    [DelayLastAircraft] float,
+    PRIMARY KEY (AircraftID, TimeID, DepWeatherID, ArrWeatherID, DepAirportID, ArrAirportID)
+)
+
+CREATE TABLE [DimDepDelayType] (
+    [DepDelayTypeID] int IDENTITY(1,1) PRIMARY KEY, 
+    [DepDelayTypeName] nvarchar(255)
+)
+
+CREATE TABLE [DimArrDelayType] (
+    [ArrDelayTypeID] int IDENTITY(1,1) PRIMARY KEY, 
+    [ArrDelayTypeName] nvarchar(255)
+)
+
+CREATE TABLE [DimAirline] (
+    [AirlineID] int IDENTITY(1,1) PRIMARY KEY, 
+    [AirlineName] nvarchar(255)
+)
+
+CREATE TABLE [DimDepDelayTag] (
+    [DepDelayTagID] int PRIMARY KEY, 
+    [DepDelayTagName] nvarchar(255)
+)
+
+CREATE TABLE [DimDistanceType] (
+    [DistanceTypeID] int IDENTITY(1,1) PRIMARY KEY,
+    [DistanceTypeName] nvarchar(255)
+)
+
+-- Alter FactFlight table to add foreign key constraints
+
+ALTER TABLE [FactFlight]
+ADD CONSTRAINT FK_FactFlight_AircraftID
+FOREIGN KEY (AircraftID) REFERENCES [DimAircraft](AircraftID);
+
+ALTER TABLE [FactFlight]
+ADD CONSTRAINT FK_FactFlight_TimeID
+FOREIGN KEY (TimeID) REFERENCES [DimTime](TimeID);
+
+ALTER TABLE [FactFlight]
+ADD CONSTRAINT FK_FactFlight_DepWeatherID
+FOREIGN KEY (DepWeatherID) REFERENCES [DimDepWeather](DepWeatherID);
+
+ALTER TABLE [FactFlight]
+ADD CONSTRAINT FK_FactFlight_ArrWeatherID
+FOREIGN KEY (ArrWeatherID) REFERENCES [DimArrWeather](ArrWeatherID);
+
+ALTER TABLE [FactFlight]
+ADD CONSTRAINT FK_FactFlight_AirlineID
+FOREIGN KEY (AirlineID) REFERENCES [DimAirline](AirlineID);
+
+ALTER TABLE [FactFlight]
+ADD CONSTRAINT FK_FactFlight_DepAirportID
+FOREIGN KEY (DepAirportID) REFERENCES [DimDepAirport](DepAirportID);
+
+ALTER TABLE [FactFlight]
+ADD CONSTRAINT FK_FactFlight_ArrAirportID
+FOREIGN KEY (ArrAirportID) REFERENCES [DimArrAirport](ArrAirportID);
+
+ALTER TABLE [FactFlight]
+ADD CONSTRAINT FK_FactFlight_DepDelayTagID
+FOREIGN KEY (DepDelayTagID) REFERENCES [DimDepDelayTag](DepDelayTagID);
+
+ALTER TABLE [FactFlight]
+ADD CONSTRAINT FK_FactFlight_DepDelayTypeID
+FOREIGN KEY (DepDelayTypeID) REFERENCES [DimDepDelayType](DepDelayTypeID);
+
+ALTER TABLE [FactFlight]
+ADD CONSTRAINT FK_FactFlight_ArrDelayTypeID
+FOREIGN KEY (ArrDelayTypeID) REFERENCES [DimArrDelayType](ArrDelayTypeID);
+
+ALTER TABLE [FactFlight]
+ADD CONSTRAINT FK_FactFlight_DistanceTypeID
+FOREIGN KEY (DistanceTypeID) REFERENCES [DimDistanceType](DistanceTypeID);
