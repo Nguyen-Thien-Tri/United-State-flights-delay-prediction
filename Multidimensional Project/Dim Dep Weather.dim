@@ -1,0 +1,294 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="36250905-103f-48c3-9823-7dee44236b07" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Dim Dep Weather</ID>
+  <Name>Dim Dep Weather</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-3642" scrolltop="-5408" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="11769" y="15642" backcolor="2039583" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01a300009001b0300100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimDepWeather" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="4445" height="4826" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e00005d110000da120000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_DimDepWeather" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-3642</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-5408</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="902c283e-1b8a-425f-9cdc-07708db1f64a">
+    <DataSourceViewID>US FLights 2023</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="5179256c-314f-440a-8acd-b2a36bfed8f5">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="7f233864-9391-4866-8903-bd26bb7e9c9f">
+      <ID>Dep Weather ID</ID>
+      <Name>Dep Weather ID</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="044b9cab-b8b0-40ca-9bf1-0b52cfe51d73">
+          <DataType>WChar</DataType>
+          <DataSize>511</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="f7649034-75d4-48ff-8fe9-da0f997c4758">
+            <TableID>dbo_DimDepWeather</TableID>
+            <ColumnID>DepWeatherID</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="814a9d21-aa02-494a-b0a1-48459a53f5e9">
+          <AttributeID>Dep Airport ID</AttributeID>
+          <Name>Dep Airport ID</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="dee633e1-4778-426c-a387-af74caa3a7e1">
+          <AttributeID>Date</AttributeID>
+          <Name>Date</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="64687e2a-35eb-4700-b0ad-ffdd8ed2beab">
+          <AttributeID>Dep Avg Temperature</AttributeID>
+          <Name>Dep Avg Temperature</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="bbdfd894-caf2-4491-8c6a-154f37a2a858">
+          <AttributeID>Dep Min Temperature</AttributeID>
+          <Name>Dep Min Temperature</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="45555665-a24a-4ba0-abcc-7bfefcde7ace">
+          <AttributeID>Dep Max Temperature</AttributeID>
+          <Name>Dep Max Temperature</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="ac3d5176-88d5-4c7f-b685-7f93c52ce31d">
+          <AttributeID>Dep Total Precipitation</AttributeID>
+          <Name>Dep Total Precipitation</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="805b800e-73dd-45d8-be64-23e3a882033f">
+          <AttributeID>Dep Snow Depth</AttributeID>
+          <Name>Dep Snow Depth</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="5f8c9ae4-ad18-474f-b5db-2e376a6203bb">
+          <AttributeID>Dep Wind Direction</AttributeID>
+          <Name>Dep Wind Direction</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="48d84ee7-33ba-438b-8d44-875909d6500c">
+          <AttributeID>Dep Avg Wind Speed</AttributeID>
+          <Name>Dep Avg Wind Speed</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="e3d8294e-1b85-4012-82fb-927278f42ab6">
+          <AttributeID>Dep Sea Level Air Pressure</AttributeID>
+          <Name>Dep Sea Level Air Pressure</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="caa537b2-98ce-42cb-91c2-ee7a3dd20d6d">
+      <ID>Dep Airport ID</ID>
+      <Name>Dep Airport ID</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="cebd1728-5a93-452b-9a40-865e97a6f9a6">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="893fc6b1-c89b-4b09-a417-718ff33c25ed">
+            <TableID>dbo_DimDepWeather</TableID>
+            <ColumnID>DepAirportID</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="393107c2-a2a9-4dd7-b80b-623c07b874b5">
+      <ID>Date</ID>
+      <Name>Date</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="93faf76c-dd47-4955-bd5e-b834bac37ab1">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="46da2d72-7d23-4d4b-89b1-bec11ff469e1">
+            <TableID>dbo_DimDepWeather</TableID>
+            <ColumnID>Date</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="0590dc4e-fb09-4b5c-8af2-e572f00c335c">
+      <ID>Dep Avg Temperature</ID>
+      <Name>Dep Avg Temperature</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="f0ab39f0-f370-4225-ae8a-c0caaaf9dc06">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="94003b39-0bbc-46d8-812a-a99b4b23149b">
+            <TableID>dbo_DimDepWeather</TableID>
+            <ColumnID>DepAvgTemperature</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="327b46d5-7896-4d3d-81a8-96bb9c43fbbc">
+      <ID>Dep Min Temperature</ID>
+      <Name>Dep Min Temperature</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="876e90a1-efaa-4e30-a7c0-8fd9d511e016">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="35ce537d-345c-4912-8b38-c597f3709536">
+            <TableID>dbo_DimDepWeather</TableID>
+            <ColumnID>DepMinTemperature</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="1453e320-ea97-4e21-974b-edbed97d2475">
+      <ID>Dep Max Temperature</ID>
+      <Name>Dep Max Temperature</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e68fa470-a9c4-4769-b256-0b4b3cec1155">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c578c90f-5212-4014-bae2-a6d85f1c85c7">
+            <TableID>dbo_DimDepWeather</TableID>
+            <ColumnID>DepMaxTemperature</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="600c5066-fbef-4aec-802d-5b79e2c594e2">
+      <ID>Dep Total Precipitation</ID>
+      <Name>Dep Total Precipitation</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="67c2d72f-03ee-4d16-b367-4f43ad0d8a7a">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3a0d0e5e-6898-4a48-a210-302b55869806">
+            <TableID>dbo_DimDepWeather</TableID>
+            <ColumnID>DepTotalPrecipitation</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="6d9cd876-a803-4e58-bd0f-15cdc7686765">
+      <ID>Dep Snow Depth</ID>
+      <Name>Dep Snow Depth</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="9f91e89c-27c3-4817-b0e9-d764148bb901">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0cdcbf8d-cfa1-41c5-8769-1418f23d2537">
+            <TableID>dbo_DimDepWeather</TableID>
+            <ColumnID>DepSnowDepth</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="bb3d8911-bb88-40fb-9574-932a372a2c23">
+      <ID>Dep Wind Direction</ID>
+      <Name>Dep Wind Direction</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="a739b4cf-0103-44f2-b5c3-db2c9cebb7e1">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="537764fe-6047-4bcf-a9f1-98d66a3df85f">
+            <TableID>dbo_DimDepWeather</TableID>
+            <ColumnID>DepWindDirection</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="eaf4a9ad-3f01-4de7-8fcd-083c2a3a5cd1">
+      <ID>Dep Avg Wind Speed</ID>
+      <Name>Dep Avg Wind Speed</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="ac00918f-21b7-4ac2-bd3a-88ae5b199327">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="4fa50b2f-8b9c-4aa3-8971-22f0766c57f8">
+            <TableID>dbo_DimDepWeather</TableID>
+            <ColumnID>DepAvgWindSpeed</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="68997528-826c-4ddd-9267-1c44e581555c">
+      <ID>Dep Sea Level Air Pressure</ID>
+      <Name>Dep Sea Level Air Pressure</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="f8d933dd-6043-4034-855f-b67d75ce101c">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ea438993-0360-476e-a78c-cd57e8076866">
+            <TableID>dbo_DimDepWeather</TableID>
+            <ColumnID>DepSeaLevelAirPressure</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

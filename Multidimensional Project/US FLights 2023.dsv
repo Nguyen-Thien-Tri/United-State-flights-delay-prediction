@@ -1,0 +1,474 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="a9d355a6-b00e-4c3d-ba0f-aa7354c03d28" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>US FLights 2023</ID>
+  <Name>US FLights 2023</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout />
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>0</DiagramViewPortLeft>
+            <DiagramViewPortTop>0</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>US FLights 2023</DataSourceID>
+  <Schema>
+    <xs:schema id="US_x0020_FLights_x0020_2023" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="US_x0020_FLights_x0020_2023" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="e6010fd8-db8e-4109-a941-836dc5ca6c98">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dbo_DimAircraft" msprop:DbTableName="DimAircraft" msprop:FriendlyName="DimAircraft" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="665c6f88-7bfc-4598-90eb-3744fefb221e">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="AircraftID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="AircraftID" msprop:DbColumnName="AircraftID" msprop:design-time-name="6e04bbd0-7054-48ae-8110-e2864a4417a3" type="xs:int" />
+                  <xs:element name="TailNumber" msprop:FriendlyName="TailNumber" msprop:DbColumnName="TailNumber" msprop:design-time-name="fd209496-734d-4ee6-bc2c-b87539a246d5" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Manufacturer" msprop:FriendlyName="Manufacturer" msprop:DbColumnName="Manufacturer" msprop:design-time-name="3e5d3446-4aaa-47e4-846e-bd365a1a532a" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Model" msprop:FriendlyName="Model" msprop:DbColumnName="Model" msprop:design-time-name="a1c7b920-f19b-4b0a-bdd1-181ae6b94474" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="AicraftAge" msprop:FriendlyName="AicraftAge" msprop:DbColumnName="AicraftAge" msprop:design-time-name="3a01711c-cb79-4f66-882d-d0d1fb4e1a13" type="xs:int" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimAirline" msprop:DbTableName="DimAirline" msprop:FriendlyName="DimAirline" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="0d43241f-51b5-44e0-bee0-4fa7e951a187">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="AirlineID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="AirlineID" msprop:DbColumnName="AirlineID" msprop:design-time-name="59f9273f-3695-44a4-abce-50db9ed12339" type="xs:int" />
+                  <xs:element name="AirlineName" msprop:FriendlyName="AirlineName" msprop:DbColumnName="AirlineName" msprop:design-time-name="b9f98e88-63b7-454f-90e1-fc70d7f4e546" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimArrAirport" msprop:DbTableName="DimArrAirport" msprop:FriendlyName="DimArrAirport" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="076e42d7-f7e2-4a6a-9ae9-990f040cbc15">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="ArrAirportID" msprop:FriendlyName="ArrAirportID" msprop:DbColumnName="ArrAirportID" msprop:design-time-name="10e621c5-71a3-453e-ad62-b7d3aa5a16b0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ArrAirportName" msprop:FriendlyName="ArrAirportName" msprop:DbColumnName="ArrAirportName" msprop:design-time-name="db6506db-e3c3-4449-b671-ce2c38c20103" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ArrAirportCity" msprop:FriendlyName="ArrAirportCity" msprop:DbColumnName="ArrAirportCity" msprop:design-time-name="a8211506-5e1d-4682-a7d5-19b99669fac2" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ArrAirportState" msprop:FriendlyName="ArrAirportState" msprop:DbColumnName="ArrAirportState" msprop:design-time-name="49b41af7-ea66-41fc-8267-d033ad015dd4" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ArrAirportCountry" msprop:FriendlyName="ArrAirportCountry" msprop:DbColumnName="ArrAirportCountry" msprop:design-time-name="1d05e411-e852-4194-b3f2-100b211798d0" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ArrAirportLatitude" msprop:FriendlyName="ArrAirportLatitude" msprop:DbColumnName="ArrAirportLatitude" msprop:design-time-name="c09e1e8a-78cb-4974-ac5c-e21e478be889" type="xs:double" minOccurs="0" />
+                  <xs:element name="ArrAirportLongitude" msprop:FriendlyName="ArrAirportLongitude" msprop:DbColumnName="ArrAirportLongitude" msprop:design-time-name="1d9e1429-9b1c-4733-8cf8-2f5a9cf58f14" type="xs:double" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimArrDelayType" msprop:DbTableName="DimArrDelayType" msprop:FriendlyName="DimArrDelayType" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="f59da4d3-574f-4030-af76-243b0a4fa69c">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="ArrDelayTypeID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="ArrDelayTypeID" msprop:DbColumnName="ArrDelayTypeID" msprop:design-time-name="53df78a3-e536-4427-8dcb-d4e70d7a726f" type="xs:int" />
+                  <xs:element name="ArrDelayTypeName" msprop:FriendlyName="ArrDelayTypeName" msprop:DbColumnName="ArrDelayTypeName" msprop:design-time-name="2ef74cbf-2901-435a-8a23-560aa38a107c" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimArrWeather" msprop:DbTableName="DimArrWeather" msprop:FriendlyName="DimArrWeather" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="1de3ee8f-325f-4859-95e9-67ad912b1c2a">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="ArrWeatherID" msprop:FriendlyName="ArrWeatherID" msprop:DbColumnName="ArrWeatherID" msprop:design-time-name="1fd74d51-badd-49a3-916c-db5901eec126">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="511" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ArrAirportID" msprop:FriendlyName="ArrAirportID" msprop:DbColumnName="ArrAirportID" msprop:design-time-name="59356690-43af-4a7a-ae1f-1f5535cf3a0a" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Date" msprop:FriendlyName="Date" msprop:DbColumnName="Date" msprop:design-time-name="7fafbd8f-ee79-4886-ba4b-f46e5103f788" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="ArrAvgTemperature" msprop:FriendlyName="ArrAvgTemperature" msprop:DbColumnName="ArrAvgTemperature" msprop:design-time-name="d6d75bdc-e9a6-4fb5-b594-706b3cf48ca8" type="xs:double" minOccurs="0" />
+                  <xs:element name="ArrMinTemperature" msprop:FriendlyName="ArrMinTemperature" msprop:DbColumnName="ArrMinTemperature" msprop:design-time-name="1ed38671-eefa-44de-bc2d-21cb04361ddd" type="xs:double" minOccurs="0" />
+                  <xs:element name="ArrMaxTemperature" msprop:FriendlyName="ArrMaxTemperature" msprop:DbColumnName="ArrMaxTemperature" msprop:design-time-name="0f6968bb-e017-45f9-bb3a-aa34a4cf985e" type="xs:double" minOccurs="0" />
+                  <xs:element name="ArrTotalPrecipitation" msprop:FriendlyName="ArrTotalPrecipitation" msprop:DbColumnName="ArrTotalPrecipitation" msprop:design-time-name="bde0a7bd-3e2f-4230-9ecf-cfaed29d1bea" type="xs:double" minOccurs="0" />
+                  <xs:element name="ArrSnowDepth" msprop:FriendlyName="ArrSnowDepth" msprop:DbColumnName="ArrSnowDepth" msprop:design-time-name="e6aa12ff-201f-45e4-bdd3-67174bccb063" type="xs:double" minOccurs="0" />
+                  <xs:element name="ArrWindDirection" msprop:FriendlyName="ArrWindDirection" msprop:DbColumnName="ArrWindDirection" msprop:design-time-name="7dbf6a09-e950-455f-b6f3-43ccbfc3f469" type="xs:double" minOccurs="0" />
+                  <xs:element name="ArrAvgWindSpeed" msprop:FriendlyName="ArrAvgWindSpeed" msprop:DbColumnName="ArrAvgWindSpeed" msprop:design-time-name="25c3c8b0-5a89-42ae-95fe-ef68432d3590" type="xs:double" minOccurs="0" />
+                  <xs:element name="ArrSeaLevelAirPressure" msprop:FriendlyName="ArrSeaLevelAirPressure" msprop:DbColumnName="ArrSeaLevelAirPressure" msprop:design-time-name="d495d3bd-529f-499e-bd2b-6e610a510a55" type="xs:double" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimDepAirport" msprop:DbTableName="DimDepAirport" msprop:FriendlyName="DimDepAirport" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="72fabb16-a058-43eb-af01-52f8565492bb">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="DepAirportID" msprop:FriendlyName="DepAirportID" msprop:DbColumnName="DepAirportID" msprop:design-time-name="e7b00cb4-a9f2-48a5-9ed8-48f91acfa1fa">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="DepAirportName" msprop:FriendlyName="DepAirportName" msprop:DbColumnName="DepAirportName" msprop:design-time-name="ffa81065-0fdb-41b1-97ba-ccdb7d72f4ac" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="DepAirportCity" msprop:FriendlyName="DepAirportCity" msprop:DbColumnName="DepAirportCity" msprop:design-time-name="f59c3993-181b-4237-85bd-9d42dde89f42" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="DepAirportState" msprop:FriendlyName="DepAirportState" msprop:DbColumnName="DepAirportState" msprop:design-time-name="4877c0f0-43a3-4330-92b8-a59127578e66" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="DepAirportCountry" msprop:FriendlyName="DepAirportCountry" msprop:DbColumnName="DepAirportCountry" msprop:design-time-name="767206e3-cef3-4c4f-b925-535488ee9ff8" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="DepAirportLatitude" msprop:FriendlyName="DepAirportLatitude" msprop:DbColumnName="DepAirportLatitude" msprop:design-time-name="51b725d3-f8a2-48f9-bc11-744f17b7e9bc" type="xs:double" minOccurs="0" />
+                  <xs:element name="DepAirportLongitude" msprop:FriendlyName="DepAirportLongitude" msprop:DbColumnName="DepAirportLongitude" msprop:design-time-name="ced13a51-f902-4159-a493-2b967dce8751" type="xs:double" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimDepDelayTag" msprop:DbTableName="DimDepDelayTag" msprop:FriendlyName="DimDepDelayTag" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="dd7bea35-56eb-47ff-bd34-e6c5a42f8503">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="DepDelayTagID" msprop:FriendlyName="DepDelayTagID" msprop:DbColumnName="DepDelayTagID" msprop:design-time-name="3eedea4e-8451-4a03-bac9-fb975d3c9e37" type="xs:int" />
+                  <xs:element name="DepDelayTagName" msprop:FriendlyName="DepDelayTagName" msprop:DbColumnName="DepDelayTagName" msprop:design-time-name="29833939-eb90-40fc-af88-f36f23dd932b" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimDepDelayType" msprop:DbTableName="DimDepDelayType" msprop:FriendlyName="DimDepDelayType" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="8fd947a6-179c-4030-b8bf-e0cdbc5112c4">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="DepDelayTypeID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="DepDelayTypeID" msprop:DbColumnName="DepDelayTypeID" msprop:design-time-name="86ed3393-c506-4967-803b-0d2af6dc3fa0" type="xs:int" />
+                  <xs:element name="DepDelayTypeName" msprop:FriendlyName="DepDelayTypeName" msprop:DbColumnName="DepDelayTypeName" msprop:design-time-name="017cdc0c-45e0-433b-9cac-7d89c925babe" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimDepWeather" msprop:DbTableName="DimDepWeather" msprop:FriendlyName="DimDepWeather" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="bd7f800b-5d87-440e-9cc8-afa4c41d7c7b">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="DepWeatherID" msprop:FriendlyName="DepWeatherID" msprop:DbColumnName="DepWeatherID" msprop:design-time-name="1eda3460-affa-462f-8490-867a20effa7a">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="511" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="DepAirportID" msprop:FriendlyName="DepAirportID" msprop:DbColumnName="DepAirportID" msprop:design-time-name="0d7fdf76-273d-4d21-84a4-102d459714ac" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Date" msprop:FriendlyName="Date" msprop:DbColumnName="Date" msprop:design-time-name="f1bdbd7c-31e1-4f31-b0f8-63976def6c5c" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="DepAvgTemperature" msprop:FriendlyName="DepAvgTemperature" msprop:DbColumnName="DepAvgTemperature" msprop:design-time-name="6acd3176-6e84-45d0-a3e7-518e69408bb7" type="xs:double" minOccurs="0" />
+                  <xs:element name="DepMinTemperature" msprop:FriendlyName="DepMinTemperature" msprop:DbColumnName="DepMinTemperature" msprop:design-time-name="072e44a5-8c06-44a9-a7dd-673f71df064d" type="xs:double" minOccurs="0" />
+                  <xs:element name="DepMaxTemperature" msprop:FriendlyName="DepMaxTemperature" msprop:DbColumnName="DepMaxTemperature" msprop:design-time-name="b1576ccc-b782-464e-b83d-e2f6dc674da4" type="xs:double" minOccurs="0" />
+                  <xs:element name="DepTotalPrecipitation" msprop:FriendlyName="DepTotalPrecipitation" msprop:DbColumnName="DepTotalPrecipitation" msprop:design-time-name="5bcfb2b6-606c-4413-9855-3ceaab94b350" type="xs:double" minOccurs="0" />
+                  <xs:element name="DepSnowDepth" msprop:FriendlyName="DepSnowDepth" msprop:DbColumnName="DepSnowDepth" msprop:design-time-name="726e3af6-1628-49f4-bf8b-f4579ca51f43" type="xs:double" minOccurs="0" />
+                  <xs:element name="DepWindDirection" msprop:FriendlyName="DepWindDirection" msprop:DbColumnName="DepWindDirection" msprop:design-time-name="34be1f93-b91e-420f-97cb-35072a0a110a" type="xs:double" minOccurs="0" />
+                  <xs:element name="DepAvgWindSpeed" msprop:FriendlyName="DepAvgWindSpeed" msprop:DbColumnName="DepAvgWindSpeed" msprop:design-time-name="43dd1aac-ba99-4c9d-b46e-4d59f5bce10a" type="xs:double" minOccurs="0" />
+                  <xs:element name="DepSeaLevelAirPressure" msprop:FriendlyName="DepSeaLevelAirPressure" msprop:DbColumnName="DepSeaLevelAirPressure" msprop:design-time-name="fc8c352d-bab5-41b0-b488-0518bbcb929d" type="xs:double" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimDistanceType" msprop:DbTableName="DimDistanceType" msprop:FriendlyName="DimDistanceType" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="feb422e2-03aa-4c76-b770-7648164ac73c">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="DistanceTypeID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="DistanceTypeID" msprop:DbColumnName="DistanceTypeID" msprop:design-time-name="b1cc06b5-1ffa-4dcf-b74f-3f717cdbce1f" type="xs:int" />
+                  <xs:element name="DistanceTypeName" msprop:FriendlyName="DistanceTypeName" msprop:DbColumnName="DistanceTypeName" msprop:design-time-name="5fba76e2-54d9-40fd-ad3b-73099ea229fe" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimTime" msprop:DbTableName="DimTime" msprop:FriendlyName="DimTime" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="554758bb-0d08-4558-8206-2cfb2302401a">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="TimeID" msprop:FriendlyName="TimeID" msprop:DbColumnName="TimeID" msprop:design-time-name="f78826de-8f3e-42e3-b4b6-b58b6c8e13cb">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="511" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="DepTimeLabel" msprop:FriendlyName="DepTimeLabel" msprop:DbColumnName="DepTimeLabel" msprop:design-time-name="7c18fc1b-9bf4-4f7c-9c78-3bce5aad9576" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="DayOfWeek" msprop:FriendlyName="DayOfWeek" msprop:DbColumnName="DayOfWeek" msprop:design-time-name="e41728cc-5055-4768-bf17-de18fb2c9c73" type="xs:int" minOccurs="0" />
+                  <xs:element name="FlightDate" msprop:FriendlyName="FlightDate" msprop:DbColumnName="FlightDate" msprop:design-time-name="eee71ff9-d473-4956-9bb3-fa67291e771a" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="Day" msprop:FriendlyName="Day" msprop:DbColumnName="Day" msprop:design-time-name="35dbfbe5-7657-4ed0-b675-b0c4922d1a8e" type="xs:int" minOccurs="0" />
+                  <xs:element name="Month" msprop:FriendlyName="Month" msprop:DbColumnName="Month" msprop:design-time-name="4892d031-984f-4982-8a13-95be49852b65" type="xs:int" minOccurs="0" />
+                  <xs:element name="Year" msprop:FriendlyName="Year" msprop:DbColumnName="Year" msprop:design-time-name="c5880658-8257-4829-a386-3f992cbe5697" type="xs:int" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_FactFlight" msprop:DbTableName="FactFlight" msprop:FriendlyName="FactFlight" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="527dc7f5-9b5c-4901-9ab3-0393d0c4c643">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="AircraftID" msprop:FriendlyName="AircraftID" msprop:DbColumnName="AircraftID" msprop:design-time-name="457d0308-8307-4250-9a64-13f0090522e0" type="xs:int" />
+                  <xs:element name="TimeID" msprop:FriendlyName="TimeID" msprop:DbColumnName="TimeID" msprop:design-time-name="1ba7ba17-b946-410c-8aa2-ae644e5cd521">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="511" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="DepWeatherID" msprop:FriendlyName="DepWeatherID" msprop:DbColumnName="DepWeatherID" msprop:design-time-name="7cc59f92-4a6e-4dd9-8a1e-cf7252e8c5cf">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="511" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ArrWeatherID" msprop:FriendlyName="ArrWeatherID" msprop:DbColumnName="ArrWeatherID" msprop:design-time-name="d1277044-fe4e-477b-af6a-abd4e5504fe3">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="511" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="AirlineID" msprop:FriendlyName="AirlineID" msprop:DbColumnName="AirlineID" msprop:design-time-name="2dee9a74-d65d-4453-8ac7-09225b16a62c" type="xs:int" minOccurs="0" />
+                  <xs:element name="DepAirportID" msprop:FriendlyName="DepAirportID" msprop:DbColumnName="DepAirportID" msprop:design-time-name="a6ad14cc-0975-4392-9637-e6554b34ac3a">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="DepDelay" msprop:FriendlyName="DepDelay" msprop:DbColumnName="DepDelay" msprop:design-time-name="8ff97085-48a7-46cd-b1dc-54e9b20169a1" type="xs:double" minOccurs="0" />
+                  <xs:element name="DepDelayTagID" msprop:FriendlyName="DepDelayTagID" msprop:DbColumnName="DepDelayTagID" msprop:design-time-name="9a7de22a-d1c2-498f-9c20-f68e27bbd693" type="xs:int" minOccurs="0" />
+                  <xs:element name="DepDelayTypeID" msprop:FriendlyName="DepDelayTypeID" msprop:DbColumnName="DepDelayTypeID" msprop:design-time-name="e0a79d7f-dc99-4df6-bb6a-b504f72726e7" type="xs:int" minOccurs="0" />
+                  <xs:element name="ArrAirportID" msprop:FriendlyName="ArrAirportID" msprop:DbColumnName="ArrAirportID" msprop:design-time-name="ad36dcfa-b329-4738-8f74-12ae6a9dffb2">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ArrDelay" msprop:FriendlyName="ArrDelay" msprop:DbColumnName="ArrDelay" msprop:design-time-name="6812238b-ecb8-47d3-982b-6ad10b1e55e6" type="xs:double" minOccurs="0" />
+                  <xs:element name="ArrDelayTypeID" msprop:FriendlyName="ArrDelayTypeID" msprop:DbColumnName="ArrDelayTypeID" msprop:design-time-name="361d8cd5-3bd4-42e1-a13f-0ea4f15bd7c9" type="xs:int" minOccurs="0" />
+                  <xs:element name="FlightDuration" msprop:FriendlyName="FlightDuration" msprop:DbColumnName="FlightDuration" msprop:design-time-name="5f44ff82-8771-41a5-9783-a6a60659b073" type="xs:double" minOccurs="0" />
+                  <xs:element name="DistanceTypeID" msprop:FriendlyName="DistanceTypeID" msprop:DbColumnName="DistanceTypeID" msprop:design-time-name="8a100ef6-3835-4d8b-9419-b39f7e7144fa" type="xs:int" minOccurs="0" />
+                  <xs:element name="DelayCarrier" msprop:FriendlyName="DelayCarrier" msprop:DbColumnName="DelayCarrier" msprop:design-time-name="885c597a-05c2-4636-bc88-e32c1b63fac2" type="xs:double" minOccurs="0" />
+                  <xs:element name="DelayWeather" msprop:FriendlyName="DelayWeather" msprop:DbColumnName="DelayWeather" msprop:design-time-name="04beefb4-8dc1-4a64-974b-ebc40ece6151" type="xs:double" minOccurs="0" />
+                  <xs:element name="DelayNAS" msprop:FriendlyName="DelayNAS" msprop:DbColumnName="DelayNAS" msprop:design-time-name="fcedbd86-7b26-4154-935e-1339ba8329bf" type="xs:double" minOccurs="0" />
+                  <xs:element name="DelaySecurity" msprop:FriendlyName="DelaySecurity" msprop:DbColumnName="DelaySecurity" msprop:design-time-name="d80451d8-8b41-4dd9-a7e5-f24a42b7d8d4" type="xs:double" minOccurs="0" />
+                  <xs:element name="DelayLastAircraft" msprop:FriendlyName="DelayLastAircraft" msprop:DbColumnName="DelayLastAircraft" msprop:design-time-name="114f5cd6-168f-42d8-872a-a559eb988bc5" type="xs:double" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+        <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimAircraft" />
+          <xs:field xpath="AircraftID" />
+        </xs:unique>
+        <xs:unique name="dbo_DimAirline_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimAirline" />
+          <xs:field xpath="AirlineID" />
+        </xs:unique>
+        <xs:unique name="dbo_DimArrAirport_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimArrAirport" />
+          <xs:field xpath="ArrAirportID" />
+        </xs:unique>
+        <xs:unique name="dbo_DimArrDelayType_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimArrDelayType" />
+          <xs:field xpath="ArrDelayTypeID" />
+        </xs:unique>
+        <xs:unique name="dbo_DimArrWeather_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimArrWeather" />
+          <xs:field xpath="ArrWeatherID" />
+        </xs:unique>
+        <xs:unique name="dbo_DimDepAirport_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimDepAirport" />
+          <xs:field xpath="DepAirportID" />
+        </xs:unique>
+        <xs:unique name="dbo_DimDepDelayTag_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimDepDelayTag" />
+          <xs:field xpath="DepDelayTagID" />
+        </xs:unique>
+        <xs:unique name="dbo_DimDepDelayType_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimDepDelayType" />
+          <xs:field xpath="DepDelayTypeID" />
+        </xs:unique>
+        <xs:unique name="dbo_DimDepWeather_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimDepWeather" />
+          <xs:field xpath="DepWeatherID" />
+        </xs:unique>
+        <xs:unique name="dbo_DimDistanceType_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimDistanceType" />
+          <xs:field xpath="DistanceTypeID" />
+        </xs:unique>
+        <xs:unique name="dbo_DimTime_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimTime" />
+          <xs:field xpath="TimeID" />
+        </xs:unique>
+        <xs:unique name="dbo_FactFlight_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_FactFlight" />
+          <xs:field xpath="AircraftID" />
+          <xs:field xpath="TimeID" />
+          <xs:field xpath="DepWeatherID" />
+          <xs:field xpath="ArrWeatherID" />
+          <xs:field xpath="DepAirportID" />
+          <xs:field xpath="ArrAirportID" />
+        </xs:unique>
+        <xs:keyref name="FK_FactFlight_ArrWeatherID" refer="dbo_DimArrWeather_Constraint1">
+          <xs:selector xpath=".//dbo_FactFlight" />
+          <xs:field xpath="ArrWeatherID" />
+        </xs:keyref>
+        <xs:keyref name="FK_FactFlight_DepAirportID" refer="dbo_DimDepAirport_Constraint1">
+          <xs:selector xpath=".//dbo_FactFlight" />
+          <xs:field xpath="DepAirportID" />
+        </xs:keyref>
+        <xs:keyref name="FK_FactFlight_DistanceTypeID" refer="dbo_DimDistanceType_Constraint1">
+          <xs:selector xpath=".//dbo_FactFlight" />
+          <xs:field xpath="DistanceTypeID" />
+        </xs:keyref>
+        <xs:keyref name="FK_FactFlight_ArrDelayTypeID" refer="dbo_DimArrDelayType_Constraint1">
+          <xs:selector xpath=".//dbo_FactFlight" />
+          <xs:field xpath="ArrDelayTypeID" />
+        </xs:keyref>
+        <xs:keyref name="FK_FactFlight_AircraftID" refer="Constraint1">
+          <xs:selector xpath=".//dbo_FactFlight" />
+          <xs:field xpath="AircraftID" />
+        </xs:keyref>
+        <xs:keyref name="FK_FactFlight_TimeID" refer="dbo_DimTime_Constraint1">
+          <xs:selector xpath=".//dbo_FactFlight" />
+          <xs:field xpath="TimeID" />
+        </xs:keyref>
+        <xs:keyref name="FK_FactFlight_DepDelayTypeID" refer="dbo_DimDepDelayType_Constraint1">
+          <xs:selector xpath=".//dbo_FactFlight" />
+          <xs:field xpath="DepDelayTypeID" />
+        </xs:keyref>
+        <xs:keyref name="FK_FactFlight_ArrAirportID" refer="dbo_DimArrAirport_Constraint1">
+          <xs:selector xpath=".//dbo_FactFlight" />
+          <xs:field xpath="ArrAirportID" />
+        </xs:keyref>
+        <xs:keyref name="FK_FactFlight_AirlineID" refer="dbo_DimAirline_Constraint1">
+          <xs:selector xpath=".//dbo_FactFlight" />
+          <xs:field xpath="AirlineID" />
+        </xs:keyref>
+        <xs:keyref name="FK_FactFlight_DepDelayTagID" refer="dbo_DimDepDelayTag_Constraint1">
+          <xs:selector xpath=".//dbo_FactFlight" />
+          <xs:field xpath="DepDelayTagID" />
+        </xs:keyref>
+        <xs:keyref name="FK_FactFlight_DepWeatherID" refer="dbo_DimDepWeather_Constraint1">
+          <xs:selector xpath=".//dbo_FactFlight" />
+          <xs:field xpath="DepWeatherID" />
+        </xs:keyref>
+      </xs:element>
+    </xs:schema>
+    <US_x0020_FLights_x0020_2023 xmlns="" />
+  </Schema>
+</DataSourceView>

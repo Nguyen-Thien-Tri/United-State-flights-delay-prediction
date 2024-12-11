@@ -1,0 +1,131 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>US_Flights_2023</Database>
+    <Server>MSI\MSSQLSERVER1</Server>
+    <ConnectionString>Data Source=MSI\MSSQLSERVER1;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>DoNotProcess</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>KRKbmM25DxTfVdPeHcRWGr8PVco=22/05/2024 2:00:32 CH22/05/2024 2:00:32 CH</TimeStamp>
+        <ID>
+          <String>US FLights 2023</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>zCO7TgFKDy0Vx63eZeMV4Xs+0Og=22/05/2024 2:00:52 CH22/05/2024 2:00:52 CH</TimeStamp>
+        <ID>
+          <String>US FLights 2023</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>2OFkrMg1PRwY68rYy3j7wj4Q00Y=22/05/2024 2:54:46 CH22/05/2024 2:01:33 CH</TimeStamp>
+        <ID>
+          <String>Dim Dep Weather</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>3Q8BZaeDvfP3RTpCUcBMv18dnOY=22/05/2024 2:54:46 CH22/05/2024 2:01:33 CH</TimeStamp>
+        <ID>
+          <String>Dim Dep Delay Tag</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>dJ/t8BQd+Mm1u3ZXsl8ZEnl8Wko=22/05/2024 2:54:46 CH22/05/2024 2:01:33 CH</TimeStamp>
+        <ID>
+          <String>Dim Airline</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>GXzwwAHcfQtKkVOKOLh7e/hVRAs=22/05/2024 2:04:21 CH22/05/2024 2:01:33 CH</TimeStamp>
+        <ID>
+          <String>Dim Arr Airport</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>jfdesaE9u9QONONHeXU6ASotLb0=22/05/2024 2:54:46 CH22/05/2024 2:01:33 CH</TimeStamp>
+        <ID>
+          <String>Dim Dep Delay Type</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>gwIL2rsHsdozRZYuFzmhQXCQUno=02/07/2024 8:15:59 SA22/05/2024 2:01:33 CH</TimeStamp>
+        <ID>
+          <String>Dim Time</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>Gx1DJXvpHiig9GRQPWpCATUUv+c=22/05/2024 2:06:12 CH22/05/2024 2:01:33 CH</TimeStamp>
+        <ID>
+          <String>Dim Aircraft</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>Hux9yQ1MvPEqoaW0DcOqjObtqBI=22/05/2024 2:54:46 CH22/05/2024 2:01:33 CH</TimeStamp>
+        <ID>
+          <String>Dim Arr Delay Type</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>ZvE7jfqilsDjixTO5/TNr+aUiz8=22/05/2024 2:54:46 CH22/05/2024 2:01:33 CH</TimeStamp>
+        <ID>
+          <String>Dim Distance Type</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>XBrL87JN2wE6VJWBp4c31qPHQwU=22/05/2024 2:06:12 CH22/05/2024 2:01:33 CH</TimeStamp>
+        <ID>
+          <String>Dim Dep Airport</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>RLKVFcP8plyJHQMREzsSToL+aMg=22/05/2024 2:54:46 CH22/05/2024 2:01:33 CH</TimeStamp>
+        <ID>
+          <String>Dim Arr Weather</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>5GTHCIh3P6FQ/NT+fwAK4K5AnH0=22/06/2024 11:07:23 CH22/05/2024 2:01:33 CHUbaJ99+RfG9YUC7ubj/f7DQUYSQ=22/05/2024 2:01:34 CH22/05/2024 2:01:33 CH</TimeStamp>
+        <ID>
+          <String>US FLights 2023</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>RFrKpnvm6vuozkqBWVxydemJSWc=22/05/2024 1:58:48 CH22/05/2024 1:58:47 CH</TimeStamp>
+      <ID>
+        <String>US_Flights_2023</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2024-07-02T01:26:00.523333Z</LastDeployed>
+</DeploymentSnapshot>
