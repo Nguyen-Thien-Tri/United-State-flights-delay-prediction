@@ -7,7 +7,6 @@ Welcome to the **United States Flights Delay Prediction** repository! This proje
 ## Table of Contents
 - [Overview](#overview)
 - [Dataset](#dataset)
-- [Installation](#installation)
 - [Technical Details](#technical-details)
 - [Results and Insights](#results-and-insights)
 - [Features](#features)
